@@ -21,7 +21,7 @@ public class AnagramAPI {
     @POST
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
-    public AnagramOutputRequest hello(AnagramInputRequest anagramInputRequest) {
+    public AnagramOutputRequest getAllCombinations(AnagramInputRequest anagramInputRequest) {
         AnagramInput anagramInput = AnagramRequestMapper.INSTANCE.toAnagramInput(anagramInputRequest);
         AnagramOutput anagramOutput = this.anagramService.getAllCombinations(anagramInput);
         return AnagramRequestMapper.INSTANCE.toAnagramOutputRequest(anagramOutput);
